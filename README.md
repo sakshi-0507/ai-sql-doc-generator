@@ -35,7 +35,3 @@ OPENAI_API_KEY=your_key_here
 
 ## 🚧 Status
 Prototype version (rule-based logic, AI integration coming soon)
-
----
-
-⭐ If you like this project, give it a star!
