@@ -1,0 +1,194 @@
+/* ===== GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  display: flex;
+  gap: 30px;
+  padding: clamp(15px, 4vw, 40px);
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* ===== CARDS ===== */
+.card,
+.output-card {
+  flex: 1;
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: clamp(15px, 2vw, 30px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease;
+}
+
+.card:hover,
+.output-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== TITLE ===== */
+h1 {
+  font-size: clamp(20px, 2.5vw, 32px);
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: clamp(12px, 1.2vw, 14px);
+  color: #cbd5f5;
+  margin-bottom: 20px;
+}
+
+/* ===== TEXTAREA ===== */
+textarea {
+  width: 100%;
+  height: clamp(150px, 25vh, 250px);
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  resize: none;
+  margin-bottom: 20px;
+  background: #0f172a;
+  color: #fff;
+  transition: 0.3s;
+}
+
+textarea:focus {
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+/* ===== BUTTON ===== */
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  font-weight: bold;
+  font-size: clamp(14px, 1vw, 16px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.7);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== OUTPUT ===== */
+.output-card {
+  max-height: 100%;
+}
+
+.output-card pre {
+  background: #020617;
+  padding: 15px;
+  border-radius: 12px;
+  overflow-x: auto;
+  overflow-y: auto;
+  flex-grow: 1;
+  font-size: clamp(12px, 1vw, 14px);
+  line-height: 1.5;
+}
+
+/* ===== SCROLLBAR (MODERN LOOK) ===== */
+pre::-webkit-scrollbar {
+  width: 6px;
+}
+pre::-webkit-scrollbar-thumb {
+  background: #6366f1;
+  border-radius: 10px;
+}
+
+/* ===== TABLET (768px - 1024px) ===== */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  textarea {
+    height: 180px;
+  }
+}
+
+/* ===== MOBILE (below 768px) ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .card,
+  .output-card {
+    padding: 15px;
+  }
+
+  textarea {
+    height: 150px;
+    font-size: 13px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .subtitle {
+    text-align: center;
+  }
+}
+
+/* ===== SMALL MOBILE (below 480px) ===== */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 18px;
+  }
+
+  textarea {
+    height: 130px;
+  }
+
+  .output-card pre {
+    font-size: 12px;
+  }
+}
+
+/* ===== LARGE SCREENS (DESKTOP / MAC 4K) ===== */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1600px;
+  }
+
+  textarea {
+    height: 300px;
+  }
+}
